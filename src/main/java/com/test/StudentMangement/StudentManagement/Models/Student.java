@@ -25,9 +25,29 @@ public class Student implements UserDetails {
 
     @Column(nullable = false)
     private String password;
+
+    public Student() {
+    }
+
+    public Student(int id, String firstName, String lastName, String email, String password) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
